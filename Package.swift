@@ -1,4 +1,4 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.7
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -23,14 +23,26 @@ let package = Package(
         .package(url: "https://github.com/f-meloni/danger-swift-xcodesummary", from: "1.0.0"), // dev
     ],
     targets: [
-        .target(name: "DangerDependencies", dependencies: ["Danger", "DangerSwiftCoverage", "DangerXCodeSummary"]), // dev
+        .target(
+            name: "DangerDependencies",
+            dependencies: [
+                .product(name: "Danger", package: "swift"),
+                "DangerSwiftCoverage",
+                .product(name: "DangerXCodeSummary", package: "danger-swift-xcodesummary")
+            ]
+        ), // dev
         .target(
             name: "DangerSwiftCoverage",
-            dependencies: ["Danger"]
+            dependencies: [
+                .product(name: "Danger", package: "swift")
+            ]
         ),
         .testTarget(
             name: "DangerSwiftCoverageTests",
-            dependencies: ["DangerSwiftCoverage", "DangerFixtures"]
+            dependencies: [
+                "DangerSwiftCoverage",
+                .product(name: "DangerFixtures", package: "swift")
+            ]
         ),
     ]
 )
