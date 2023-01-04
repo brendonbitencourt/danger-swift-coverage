@@ -20,15 +20,13 @@ let package = Package(
         .package(url: "https://github.com/Realm/SwiftLint", from: "0.28.1"), // dev
         .package(url: "https://github.com/f-meloni/Rocket", from: "1.0.0"), // dev
         .package(url: "https://github.com/orta/Komondor", from: "1.0.0"), // dev
-        .package(url: "https://github.com/f-meloni/danger-swift-xcodesummary", from: "1.0.0"), // dev
     ],
     targets: [
         .target(
             name: "DangerDependencies",
             dependencies: [
                 .product(name: "Danger", package: "swift"),
-                "DangerSwiftCoverage",
-                .product(name: "DangerXCodeSummary", package: "danger-swift-xcodesummary")
+                "DangerSwiftCoverage"
             ]
         ), // dev
         .target(
