@@ -28,15 +28,6 @@
       }
     },
     {
-      "identity" : "danger-swift-xcodesummary",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/f-meloni/danger-swift-xcodesummary",
-      "state" : {
-        "revision" : "742e2854a1693ddb7f511ca7a4e6206b12103b20",
-        "version" : "1.1.0"
-      }
-    },
-    {
       "identity" : "komondor",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/orta/Komondor",
